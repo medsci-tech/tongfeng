@@ -63,4 +63,33 @@ class StudentController extends Controller
             'success' => $student->save()
         ]);
     }
+
+    public function updateDate(Request $request){
+        if($request->isMethod('POST')){
+            $file = $request->file('file')->getRealPath();
+            //dd($file);
+            \Excel::load($file,function($reader){
+                $datas = $reader->skip(2)->all()->toArray();//dd($datas);
+                foreach ($datas as $data){
+                    $id = (int)$data[0];
+                    $info = Student::find($id);
+                    $info->name = $data[2];
+                    $info->province = $data[3];
+                    $info->city = $data[4];
+                    $info->area = $data[5];
+                    $info->hospital_name = $data[6];
+                    $info->hospital_level = $data[7];
+                    $info->office = $data[8];
+                    $info->title = $data[9];
+                    $info->email = $data[10];
+                    $info->sex = ($data[11]=='男'?1:0);
+                    //dd($info);
+                    $info->save();
+                }
+                dd('导入成功');
+            });
+
+        }
+        return view('backend.tables.update');
+    }
 }
