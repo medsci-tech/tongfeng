@@ -1,0 +1,374 @@
+h4 {
+    font-size:14px;
+}
+.question-item {
+padding: 0;
+min-width: 300px
+}
+.ivu-row-flex {
+-ms-flex-direction: row;
+flex-direction: row;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap
+}
+.ivu-row-flex-top {
+-ms-flex-align: start;
+align-items: flex-start
+}
+.ivu-row-flex-start {
+-ms-flex-pack: start;
+justify-content: flex-start
+}
+.ivu-col {
+position: relative;
+display: block
+}
+.ivu-col-span-6 {
+display: block;
+width: 25%
+}
+.ivu-col-span-1,.ivu-col-span-2,.ivu-col-span-3,.ivu-col-span-4,.ivu-col-span-5,.ivu-col-span-6,.ivu-col-span-7,.ivu-col-span-8,.ivu-col-span-9,.ivu-col-span-10,.ivu-col-span-11,.ivu-col-span-12,.ivu-col-span-13,.ivu-col-span-14,.ivu-col-span-15,.ivu-col-span-16,.ivu-col-span-17,.ivu-col-span-18,.ivu-col-span-19,.ivu-col-span-20,.ivu-col-span-21,.ivu-col-span-22,.ivu-col-span-23,.ivu-col-span-24 {
+float: left;
+-ms-flex: 0 0 auto;
+flex: 0 0 auto
+}
+.ivu-col-span-18 {
+display: block;
+width: 75%
+}
+.question-options {
+padding: 0
+}
+.ivu-radio-group {
+display: inline-block;
+font-size: 12px
+}
+
+.ivu-radio-group-vertical .ivu-radio-wrapper {
+    display: block;
+/* height: 30px;  */
+    line-height: 20px;
+}
+.option-item {
+padding: 2px 0;
+font-weight: unset;
+}
+.ivu-radio-wrapper-disabled {
+cursor: not-allowed
+}
+.ivu-radio {
+display: inline-block;
+margin-right: 4px;
+white-space: nowrap;
+outline: 0;
+position: relative;
+line-height: 1;
+vertical-align: middle;
+cursor: pointer
+}
+.ivu-radio-disabled,.ivu-radio-disabled .ivu-radio-input {
+cursor: not-allowed
+}
+
+.ivu-radio-disabled:hover .ivu-radio-inner {
+border-color: #d7dde4
+}
+
+.ivu-radio-disabled .ivu-radio-inner {
+border-color: #d7dde4;
+background-color: #f3f3f3
+}
+
+.ivu-radio-disabled .ivu-radio-inner:after {
+background-color: #ccc
+}
+
+.ivu-radio-disabled .ivu-radio-disabled+span {
+color: #ccc
+}
+.ivu-radio:hover .ivu-radio-inner {
+border-color: #bcbcbc
+}
+
+.ivu-radio-inner {
+display: inline-block;
+width: 14px;
+height: 14px;
+position: relative;
+top: 0;
+left: 0;
+background-color: #fff;
+border: 1px solid #d7dde4;
+border-radius: 50%;
+transition: all .2s ease-in-out
+}
+
+.ivu-radio-inner:after {
+position: absolute;
+width: 8px;
+height: 8px;
+left: 2px;
+top: 2px;
+border-radius: 6px;
+display: table;
+border-top: 0;
+border-left: 0;
+content: " ";
+background-color: #39f;
+opacity: 0;
+transition: all .2s ease-in-out;
+transform: scale(0)
+}
+.ivu-radio-checked .ivu-radio-inner {
+border-color: #39f
+}
+
+.ivu-radio-checked .ivu-radio-inner:after {
+opacity: 1;
+transform: scale(1);
+transition: all .2s ease-in-out
+}
+
+.ivu-radio-checked:hover .ivu-radio-inner {
+border-color: #39f
+}
+.ivu-radio-disabled:hover .ivu-radio-inner {
+border-color: #d7dde4
+}
+
+.ivu-radio-disabled .ivu-radio-inner {
+border-color: #d7dde4;
+background-color: #f3f3f3
+}
+
+.ivu-radio-disabled .ivu-radio-inner:after {
+background-color: #ccc
+}
+.ivu-radio-group-button .ivu-radio-wrapper .ivu-radio-inner,.ivu-radio-group-button .ivu-radio-wrapper input {
+opacity: 0;
+width: 0;
+height: 0
+}
+.ivu-radio-input {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 1;
+opacity: 0;
+cursor: pointer
+}
+.option-action {
+display: none;
+margin-left: 100px;
+padding: 0 10px;
+text-align: right;
+color: #a9afb2
+}
+
+.option-action:hover {
+color: #018fe5
+}
+
+.option-item:hover .option-action {
+display: inline-block;
+cursor: pointer
+}
+.checkbox-list label {
+display: block
+}
+.ivu-checkbox-group {
+font-size: 14px
+}
+
+.ivu-checkbox-group-item,.ivu-switch {
+display: inline-block
+}
+.ivu-checkbox-group {
+font-size: 14px
+}
+
+.ivu-checkbox-group-item,.ivu-switch {
+display: inline-block
+}
+
+.ivu-checkbox-wrapper {
+cursor: pointer;
+font-size: 12px;
+display: inline-block;
+margin-right: 8px
+}
+
+.ivu-checkbox-wrapper-disabled {
+cursor: not-allowed
+}
+
+.ivu-checkbox+span,.ivu-checkbox-wrapper+span {
+margin-right: 4px
+}
+
+.ivu-checkbox-wrapper-disabled {
+cursor: not-allowed
+}
+.ivu-checkbox {
+display: inline-block;
+vertical-align: middle;
+white-space: nowrap;
+cursor: pointer;
+outline: 0;
+line-height: 1;
+position: relative
+}
+.ivu-checkbox-disabled {
+cursor: not-allowed
+}
+.ivu-checkbox:hover .ivu-checkbox-inner {
+border-color: #bcbcbc
+}
+.ivu-checkbox-inner {
+display: inline-block;
+width: 14px;
+height: 14px;
+position: relative;
+top: 0;
+left: 0;
+border: 1px solid #d7dde4;
+border-radius: 2px;
+background-color: #fff;
+transition: border-color .2s ease-in-out,background-color .2s ease-in-out
+}
+
+.ivu-checkbox-inner:after {
+content: "";
+display: table;
+width: 4px;
+height: 8px;
+position: absolute;
+top: 1px;
+left: 4px;
+border: 2px solid #fff;
+border-top: 0;
+border-left: 0;
+transform: rotate(45deg) scale(0);
+transition: all .2s ease-in-out
+}
+.ivu-checkbox-checked:hover .ivu-checkbox-inner {
+border-color: #39f
+}
+
+.ivu-checkbox-checked .ivu-checkbox-inner {
+border-color: #39f;
+background-color: #39f
+}
+
+.ivu-checkbox-checked .ivu-checkbox-inner:after {
+content: "";
+display: table;
+width: 4px;
+height: 8px;
+position: absolute;
+top: 1px;
+left: 4px;
+border: 2px solid #fff;
+border-top: 0;
+border-left: 0;
+transform: rotate(45deg) scale(1);
+transition: all .2s ease-in-out
+}
+
+.ivu-checkbox-disabled.ivu-checkbox-checked:hover .ivu-checkbox-inner {
+border-color: #d7dde4
+}
+
+.ivu-checkbox-disabled.ivu-checkbox-checked .ivu-checkbox-inner {
+background-color: #f3f3f3;
+border-color: #d7dde4
+}
+
+.ivu-checkbox-disabled.ivu-checkbox-checked .ivu-checkbox-inner:after {
+animation-name: none;
+border-color: #ccc
+}
+
+.ivu-checkbox-disabled:hover .ivu-checkbox-inner {
+border-color: #d7dde4
+}
+
+.ivu-checkbox-disabled .ivu-checkbox-inner {
+border-color: #d7dde4;
+background-color: #f3f3f3
+}
+
+.ivu-checkbox-disabled .ivu-checkbox-inner:after {
+animation-name: none;
+border-color: #f3f3f3
+}
+
+.ivu-checkbox-disabled .ivu-checkbox-inner-input {
+cursor: default
+}
+.ivu-checkbox-indeterminate .ivu-checkbox-inner:after {
+content: "";
+width: 8px;
+height: 1px;
+transform: scale(1);
+position: absolute;
+left: 2px;
+top: 5px
+}
+
+.ivu-checkbox-indeterminate:hover .ivu-checkbox-inner {
+border-color: #39f
+}
+
+.ivu-checkbox-indeterminate .ivu-checkbox-inner {
+background-color: #39f;
+border-color: #39f
+}
+
+.ivu-checkbox-input {
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 1;
+cursor: pointer;
+opacity: 0
+}
+
+.ivu-checkbox-input[disabled] {
+cursor: not-allowed
+}
+.ivu-input-wrapper {
+display: inline-block;
+width: 100%;
+position: relative;
+vertical-align: middle
+}
+.ivu-input {
+display: inline-block;
+width: 100%;
+height: 32px;
+line-height: 1.5;
+padding: 4px 7px;
+font-size: 12px;
+border: 1px solid #d7dde4;
+border-radius: 4px;
+color: #657180;
+background-color: #fff;
+background-image: none;
+position: relative;
+cursor: text;
+transition: border .2s ease-in-out,background .2s ease-in-out,box-shadow .2s ease-in-out
+}
+*,:after,:before {
+box-sizing: border-box
+}
+.ivu-row-flex,.ivu-row-flex:after,.ivu-row-flex:before {
+display: -ms-flexbox;
+display: flex
+}

@@ -1,0 +1,248 @@
+img {
+  width: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+}
+
+.media-object {
+  > div > p {
+    border-bottom: 1px dashed #000;
+  }
+}
+
+.reveal {
+  background-color: #fbfbfb;
+}
+
+.help-text {
+  color: #ec5840;
+}
+
+.information {
+  .header {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    z-index: 2;
+    margin-top: -4.5rem;
+    width: 100%;
+    height: 3rem;
+    background-color: #fbfbfb;
+    border-radius: 3rem 3rem 0 0;
+    box-shadow: 0 -.5rem 1rem #eee inset;
+
+    div {
+      height: .5rem;
+    }
+
+    span {
+      &:nth-child(2) {
+        font-weight: bold;
+      }
+      padding-left: 3rem;
+    }
+  }
+}
+
+.top-bar {
+  background-color: #fbfbfb;
+  box-shadow: 0 -0.8rem 1rem -0.5rem #ddd inset;
+
+  ul {
+    background-color: transparent;
+
+    li {
+      &:hover {
+        background-color: #eee;
+      }
+      a {
+        padding: .1rem 1rem;
+        margin: .6rem 0;
+        border-left: 1px solid #ddd;
+      }
+    }
+  }
+}
+
+.top-bar .top-bar-left, .top-bar .top-bar-right {
+  width: auto;
+}
+
+.media-object {
+  font-size: 90%;
+  .columns {
+    &:last-child {
+      margin-top: .5rem;
+    }
+  }
+
+  h4 {
+    font-weight: bold;
+  }
+
+  i {
+    font-size: 120%;
+    color: #888;
+  }
+}
+
+//$bg-color:#f23c13;
+$bg-color:#fb5004;
+$bg-color-hover:#f23c13;
+
+.button {
+  border-radius: .2rem;
+  background-color: $bg-color;
+  &:hover, &:focus {
+    background-color: $bg-color-hover;
+  }
+}
+.button[disabled], .html input[disabled]{
+  background-color: $bg-color !important;
+}
+
+.collapse {
+  .tabs {
+    background-color: $bg-color;
+    color: #fbfbfb;
+    li {
+      background-color: $bg-color;
+    }
+    .tabs-title > a {
+      &:focus, &:hover, &[aria-selected=true] {
+        background-color: $bg-color-hover;
+      }
+      padding: .8rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+  .tabs-content {
+    background-color: inherit;
+    border: none;
+    #panel0 {
+      padding: 0;
+
+      > div {
+        padding: 2rem 0 1rem 0;
+        border-bottom: 1px dashed #555;
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+    .span {
+      display: inline-block;
+      font-size: 90%;
+    }
+  }
+
+  #panel1 {
+    > div {
+      padding-top: 2rem;
+      border-bottom: 1px solid #aaa;
+
+      .medium-3 {
+        text-align: center;
+        padding-bottom: 2rem;
+        img {
+          width: 200px;
+        }
+      }
+
+      .gray {
+        color: #aaa;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+      &:first-child {
+        padding-top: 1rem;
+      }
+    }
+  }
+
+  #panel2 {
+    .question-title {
+      background-color: #eee;
+      padding: .5rem;
+    }
+    p {
+      padding: 0 1rem;
+      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 1rem;
+      }
+      &:first-child {
+        margin-top: .5rem;
+      }
+    }
+  }
+
+}
+
+.footer {
+  background-color: #f1f1f1;
+  img {
+    width: 100%;
+    padding: 2rem;
+  }
+}
+
+.video {
+  background-color: #555;
+  color: #ddd;
+  padding-bottom: 1rem;
+
+  > div {
+    margin-top: 1rem;
+  }
+
+  .video-list {
+    @media screen and (min-width: 40em) {
+      min-height: 550px;
+    }
+
+    overflow-y: auto;
+    h5 {
+      padding: .5rem;
+      margin: 0;
+      background-color: #000;
+      border-bottom: 1px solid #555;
+    }
+    li {
+      background-color: #333;
+    }
+
+    a {
+      border-bottom: 1px solid #000;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      .over-hide {
+        color: inherit;
+        cursor: inherit;
+        border-bottom: none;
+      }
+    }
+
+    a:hover {
+      background-color: rgba(33, 153, 258, 0.2);
+    }
+
+    a:focus {
+      outline: 0;
+    }
+
+    .active > a {
+      background-color: rgba(33, 153, 258, 0.5);
+    }
+
+    .is-accordion-submenu-parent > a:after, .is-accordion-submenu-parent[aria-expanded=true] > a:after {
+      border-color: #eee transparent transparent;
+    }
+  }
+}
