@@ -9,6 +9,7 @@ use App\Models\ThyroidClassCourse;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
+
 /**
  * Class ExcelController
  * @package App\Http\Controllers\Admin
@@ -44,6 +45,7 @@ class ExcelController extends Controller
      * 导出学生信息
      */
     public function exportStudent(Request $request){
+        ini_set('memory_limit', '128M');
         $head1 = ['学生信息','','','','','','','','','','','','','',''];
         $head2= ['id', '手机号', '姓名','省', '市', '区', '医院', '医院级别' ,'科室', '职称', '邮箱', '性别','年龄','二维码注册','报名时间'];
         $fixLength = count($head2);
@@ -120,17 +122,14 @@ class ExcelController extends Controller
                 $sheet->rows($cellData);
                 $sheet->mergeCells('A1:O1');
                 for ($i=$fixLength; $i<count($head2);$i=$i+2){
-                    $start = 65 + $i;
-                    $sheet->mergeCells(chr($start). '1:'.chr($start+1).'1');
+                    $c1 = \PHPExcel_Cell::stringFromColumnIndex($i);
+                    $c2 = \PHPExcel_Cell::stringFromColumnIndex($i + 1);
+    
+                    $sheet->mergeCells($c1. '1:'.$c2.'1');
 
-                    $sheet->cell(chr($start). '1', function($cell) {
+                    $sheet->cell($c1. '1', function($cell) {
                         $cell->setAlignment('center'); 
-                        // $cell->setBackground('#ff0000');
                     });
-
-                    // $sheet->cell(chr($start). '2:'.chr($start+1).'2', function($cell) {
-                    //     $cell->setBackground('#ff0000');
-                    // });
                 }
 
                 $sheet->cell('A1', function($cell) {
@@ -138,17 +137,6 @@ class ExcelController extends Controller
                         $cell->setBorder('solid');
                         // $cell->setBackground('#00df00');
                 });
-                // $sheet->cell('A2:M2', function($cell) {
-                //     $cell->setBackground('#00df00');
-                // });
-                // $sheet->cell(chr(count($head2)-2 + 65). '1', function($cell) {
-                //     $cell->setBackground('#0000ff');
-                // });
-                // $sheet->cell(chr(count($head2)-2 + 65). '2:'.chr(count($head2)-1 + 65).'2', function($cell) {
-                //     $cell->setBackground('#0000ff');
-                // });
-                // $sheet->setBorder('A1', 'thin');
-                // $sheet->setAllBorders('thin');
             });
         })->export('xls');
     }
@@ -396,3 +384,4 @@ class ExcelController extends Controller
         dd(json_encode($array));
     }
 }
+
