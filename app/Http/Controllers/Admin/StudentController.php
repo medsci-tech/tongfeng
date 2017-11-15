@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\PrivateStudent;
 use App\Models\Student;
 use App\Http\Controllers\Controller;
 use App\Models\ThyroidClassCourse;
@@ -91,5 +92,9 @@ class StudentController extends Controller
 
         }
         return view('backend.tables.update');
+    }
+
+    public function privateinfo(){
+        return view('backend.tables.private_student',['students'=>PrivateStudent::paginate(10)]);
     }
 }

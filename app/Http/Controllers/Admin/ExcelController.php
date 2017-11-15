@@ -63,7 +63,7 @@ class ExcelController extends Controller
 
 
         $students = Student::all();
-        $cellData = [$head1,$head2];
+        $cellData = [$head1,$head2];//dd($cellData);
         foreach ($students as $student) {
                 $old = '';
                 if (!empty($student->birthday)){
@@ -113,7 +113,6 @@ class ExcelController extends Controller
                 array_push($cellData, $item);
 
         }
-
         \Excel::create('学员信息', function ($excel) use ($cellData, $head2, $fixLength) {
             $excel->sheet(date('Y-M-D'), function ($sheet) use ($cellData, $head2, $fixLength) {
                 //$sheet->appendRow(['学生信息','','','','','','','','','','','']);

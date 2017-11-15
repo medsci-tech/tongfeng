@@ -26,6 +26,7 @@
         </a>
         <ul class="treeview-menu menu-open">
           <li><a href="{{ url('/admin/student') }}"><i class="fa fa-circle-o"></i>学生信息</a></li>
+          <li><a href="{{ url('/admin/private-student') }}"><i class="fa fa-circle-o"></i>私教课学生信息</a></li>
         </ul>
       </li>
       <li class="active treeview">

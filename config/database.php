@@ -66,6 +66,20 @@ return [
             'engine' => null,
         ],
 
+        'mysql_vol' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE2', 'mime_web'),
+            'username' => env('DB_USERNAME2', 'root'),
+            'password' => env('DB_PASSWORD2', 'root'),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => 'mime_',
+            'strict' => false,
+            'engine' => null,
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', 'localhost'),

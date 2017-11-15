@@ -95,6 +95,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
     Route::resource('course', 'CourseController');
     Route::resource('banner', 'BannerController');
     Route::resource('student', 'StudentController');
+    Route::resource('private-student', 'StudentController@privateinfo');
     Route::any('update','StudentController@updateDate');
     Route::group(['prefix' => 'statistic'], function () {
         Route::get('/area-map', 'StatisticController@areaMap');
