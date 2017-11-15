@@ -123,11 +123,11 @@ class ExcelController extends Controller
                 for ($i=$fixLength; $i<count($head2);$i=$i+2){
                     $c1 = \PHPExcel_Cell::stringFromColumnIndex($i);
                     $c2 = \PHPExcel_Cell::stringFromColumnIndex($i + 1);
-    
+
                     $sheet->mergeCells($c1. '1:'.$c2.'1');
 
                     $sheet->cell($c1. '1', function($cell) {
-                        $cell->setAlignment('center'); 
+                        $cell->setAlignment('center');
                     });
                 }
 
@@ -383,4 +383,3 @@ class ExcelController extends Controller
         dd(json_encode($array));
     }
 }
-
