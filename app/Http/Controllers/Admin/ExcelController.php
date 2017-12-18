@@ -45,7 +45,7 @@ class ExcelController extends Controller
      * 导出学生信息
      */
     public function exportStudent(Request $request){
-//        ini_set('memory_limit', 0);
+        ini_set('memory_limit', '1024M');
         $head1 = ['学生信息','','','','','','','','','','','','','',''];
         $head2= ['id', '手机号', '姓名','省', '市', '区', '医院', '医院级别' ,'科室', '职称', '邮箱', '性别','年龄','二维码注册','报名时间'];
         $fixLength = count($head2);
