@@ -99,7 +99,7 @@
             </div>
           </div>
           <div class="medium-8 small-12 columns align-top">
-            <div class="medium-4 small-6 columns" style="padding-bottom: 1rem"
+            <div class="medium-4 small-6 columns" style="height:255px;"
                  v-for="course in row.courses">
               <div class="small-12">
                 <a href="@{{ course.href }}">
