@@ -10,6 +10,7 @@ use App\Models\MessageVerify;
 use App\Models\Student;
 use App\Models\Questionnaire;
 use App\Models\QuestionResult;
+use Redis;
 
 /**
  * Class LoginController
@@ -74,7 +75,8 @@ class LoginController extends WebController
         }
 
         \Session::set('studentId', $student->id);
-
+		$key = 'user-tf:'.$student->id.':mime';
+		Redis::set($key,1);
         if (\Session::has('return_referer')) {
             $returnUrl = \Session::get('return_referer');
             \Session::remove('return_referer');
@@ -177,5 +179,12 @@ class LoginController extends WebController
             return response()->json(['success' => false]);
         }
     }
+
+	public function incrTimes(){
+    	$this->middleware('login');
+		$key = 'user-tf:'.session('studentId').':mime';
+		Redis::set($key,0);
+		echo 1;exit;
+	}
 
 } /*class*/

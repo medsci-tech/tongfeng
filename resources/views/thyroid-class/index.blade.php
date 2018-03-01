@@ -7,12 +7,25 @@
 @section('css')
   <link rel="stylesheet" href="/vendor/swiper/swiper-3.3.0.min.css">
   <link rel="stylesheet" href="/css/thyroid-class.css">
+  <link rel="stylesheet" href="/css/model.css">
 @endsection
 
 @section('content')
 
   @include('layouts.header')
+  <div class="modal fade" tabindex="-1" role="dialog" id="activity_modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
 
+        <div class="modal-body">
+          <img src="{{ asset('/img/close.jpg') }}" style="width: 40px;position: relative;float: right;cursor: pointer;" id="activity_close">
+          <img src="{{ asset('/img/20180301210607-tf.png') }}" style="max-width: 500px;">
+          {{--<img src="{{ asset('airclass/img/unlock.png') }}" style="width: 36%;margin-top:-21%;margin-left: 30%;position: relative;display:block;cursor: pointer;" id="activity_img">--}}
+          <a class="btn-primary" href="http://wechat.mime.org.cn/register?from=1">立即跳转</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="swiper-container">
       <div class="swiper-wrapper">
@@ -403,6 +416,15 @@
   <script src="http://qzonestyle.gtimg.cn/open/qcloud/video/h5/h5connect.js"></script>
   <script type="text/javascript">
     (function () {
+        $('#activity_close').click(function(){
+            $('.modal').fadeOut();
+        })
+        var key = {{ Redis::get('user-tf:'.session('studentId').':mime')?:0}};
+
+        if(key===1 ){
+            $('.modal').fadeIn();
+            $.get("{{url('/home/incrTimes')}}",function(){});
+        }
       var option = {
         "auto_play": "0",
         "file_id": "{{$thyroidClass->qcloud_file_id}}",

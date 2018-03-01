@@ -32,6 +32,7 @@ Route::group(['prefix' => 'home', 'namespace' => 'Home'], function () {
     });
 
     Route::get('/login', 'LoginController@showLoginForm');
+    Route::get('/incrTimes', 'LoginController@incrTimes');
     Route::any('/logout', 'LoginController@logout');
     Route::post('/login', 'LoginController@login');
     Route::get('/pwd2back_view', 'LoginController@pwd2backGet');
