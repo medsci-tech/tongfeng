@@ -75,8 +75,8 @@ class LoginController extends WebController
         }
 
         \Session::set('studentId', $student->id);
-		$key = 'user-tf:'.$student->id.':mime';
-		Redis::set($key,1);
+		/*$key = 'user-tf:'.$student->id.':mime';
+		Redis::set($key,1);*/
         if (\Session::has('return_referer')) {
             $returnUrl = \Session::get('return_referer');
             \Session::remove('return_referer');

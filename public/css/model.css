@@ -9,7 +9,7 @@
     background-color: #eeeeeeaa;
     z-index:100;
     padding-top:20px;
-    display: none;
+    /*display: none;*/
 }
 .modal-body{
     position: relative;

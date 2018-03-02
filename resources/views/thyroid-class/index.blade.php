@@ -419,12 +419,12 @@
         $('#activity_close').click(function(){
             $('.modal').fadeOut();
         })
-        var key = {{ Redis::get('user-tf:'.session('studentId').':mime')?:0}};
+        /*var key = {{ Redis::get('user-tf:'.session('studentId').':mime')?:0}};
 
         if(key===1 ){
             $('.modal').fadeIn();
             $.get("{{url('/home/incrTimes')}}",function(){});
-        }
+        }*/
       var option = {
         "auto_play": "0",
         "file_id": "{{$thyroidClass->qcloud_file_id}}",
